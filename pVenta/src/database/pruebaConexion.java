@@ -9,8 +9,8 @@ package database;
  * @author ENVY
  */
 public class pruebaConexion {
-    public static void main(){
-        Conexion con =new Conexion();
+    public static void main(String[] args){
+        Conexion con =Conexion.getInstance();
         con.conectar();
         if(con.connection!=null){
             System.out.println("Conectado");

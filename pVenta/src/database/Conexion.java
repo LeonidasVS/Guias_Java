@@ -13,8 +13,9 @@ public class Conexion {
     private final String PASSWORD="root123";
     
     public Connection connection;
+    public static Conexion singleConnection;
     
-    public Conexion(){
+    private Conexion(){
         this.connection=null;
     }
     
@@ -34,6 +35,14 @@ public class Conexion {
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
-        
     }
+    
+     public synchronized static Conexion getInstance(){
+            if(singleConnection==null){
+                singleConnection=new Conexion();
+            }
+            return singleConnection;
+     }
 }
+
+
