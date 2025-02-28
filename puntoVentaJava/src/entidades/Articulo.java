@@ -11,23 +11,21 @@ package entidades;
 public class Articulo {
     private int idArticulo;
     private int categoriaId;
-    private int codigo;
+    private String codigo;
     private String nombre;
     private double precio_venta;
+    private int stock;
     private String descripcion;
     private String imagen;
     private boolean estado;
-    
-    
-    public Articulo() {
-    }
 
-    public Articulo(int idArticulo, int categoriaId, int codigo, String nombre, double precio_venta, String descripcion, String imagen, boolean estado) {
+    public Articulo(int idArticulo, int categoriaId, String codigo, String nombre, double precio_venta, int stock, String descripcion, String imagen, boolean estado) {
         this.idArticulo = idArticulo;
         this.categoriaId = categoriaId;
         this.codigo = codigo;
         this.nombre = nombre;
         this.precio_venta = precio_venta;
+        this.stock = stock;
         this.descripcion = descripcion;
         this.imagen = imagen;
         this.estado = estado;
@@ -49,11 +47,11 @@ public class Articulo {
         this.categoriaId = categoriaId;
     }
 
-    public int getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
@@ -71,6 +69,14 @@ public class Articulo {
 
     public void setPrecio_venta(double precio_venta) {
         this.precio_venta = precio_venta;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 
     public String getDescripcion() {
@@ -97,10 +103,10 @@ public class Articulo {
         this.estado = estado;
     }
 
-    @Override
-    public String toString() {
-        return "Articulo{" + "idArticulo=" + idArticulo + ", categoriaId=" + categoriaId + ", codigo=" + codigo + ", nombre=" + nombre + ", precio_venta=" + precio_venta + ", descripcion=" + descripcion + ", imagen=" + imagen + ", estado=" + estado + '}';
+    public Articulo() {
     }
-    
+   
+
+   
     
 }
