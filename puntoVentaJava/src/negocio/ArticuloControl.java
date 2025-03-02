@@ -22,11 +22,13 @@ public class ArticuloControl {
         this.obj = new Articulo();
     }
 
-    public DefaultTableModel listar(String texto, int totalPorpagina, int numpagina) {
+    public DefaultTableModel listar(String texto,
+            int totalPorpagina,
+            int numpagina) {
         List<Articulo> lista = new ArrayList();
         lista.addAll(DATOS.getAll(texto, totalPorpagina, numpagina));
         String[] titulos
-                = {"id", "categoria_id", "codigo", "nombre", "precio_venta", "stock",
+                = {"idArticulo", "categoria_Id", "codigo", "nombre", "precio_venta", "stock",
                     "descripcion", "imagen", "estado"};
         this.tModel = new DefaultTableModel(null, titulos);
 
@@ -41,12 +43,12 @@ public class ArticuloControl {
             }
 
             registro[0] = Integer.toString(item.getIdArticulo());
-            registro[1] = Integer.toString(item.getCategoriaId());
+            registro[1] = Integer.toString(item.getCategoria_id());
             registro[2] = item.getCodigo();
             registro[3] = item.getNombre();
             registro[4] = Double.toString(item.getPrecio_venta());
             registro[5] = Integer.toString(item.getStock());
-            registro[6] = item.getDescripcion();
+            registro[6] = item.getDesscriocion();
             registro[7] = item.getImagen();
             registro[8] = Boolean.toString(item.isEstado());
 
@@ -56,16 +58,22 @@ public class ArticuloControl {
         return this.tModel;
     }
 
-    public String Insertar(int categoria_id, String codigo, String nombre, double precio, int stock, String descripcion, String imagen, boolean estado) {
+    public String Insertar(int categoria_id,
+            String codigo,
+            String nombre,
+            double precio,
+            int stock,
+            String descripcion,
+            String imagen) {
         if (DATOS.exist(nombre)) {
             return "Registro ya existe";
         } else {
             obj.setNombre(nombre);
-            obj.setCategoriaId(categoria_id);
+            obj.setCategoria_id(categoria_id);
             obj.setCodigo(codigo);
             obj.setNombre(nombre);
             obj.setPrecio_venta(precio);
-            obj.setDescripcion(descripcion);
+            obj.setDesscriocion(descripcion);
             obj.setImagen(imagen);
             if (DATOS.insert(obj)) {
                 return "OK";
@@ -75,7 +83,7 @@ public class ArticuloControl {
         }
     }
 
-     public String actualizar(
+        public String actualizar(
             int articulo_id,
             int categoria_id,
             String codigo,
@@ -90,11 +98,11 @@ public class ArticuloControl {
 
             obj.setIdArticulo(articulo_id);
             obj.setNombre(nombre);
-            obj.setCategoriaId(categoria_id);
+            obj.setCategoria_id(categoria_id);
             obj.setCodigo(codigo);
             obj.setNombre(nombre);
             obj.setPrecio_venta(precio);
-            obj.setDescripcion(descripcion);
+            obj.setDesscriocion(descripcion);
             obj.setImagen(imagen);
 
             // Primero verificamos si el nombre ya existe en la base de datos

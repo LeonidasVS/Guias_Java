@@ -8,28 +8,17 @@ package entidades;
  *
  * @author everc
  */
+
 public class Articulo {
     private int idArticulo;
-    private int categoriaId;
+    private int categoria_Id;
     private String codigo;
     private String nombre;
     private double precio_venta;
-    private int stock;
-    private String descripcion;
-    private String imagen;
+    private int stock ;
+    private String descripcion; 
+    private String  imagen; 
     private boolean estado;
-
-    public Articulo(int idArticulo, int categoriaId, String codigo, String nombre, double precio_venta, int stock, String descripcion, String imagen, boolean estado) {
-        this.idArticulo = idArticulo;
-        this.categoriaId = categoriaId;
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.precio_venta = precio_venta;
-        this.stock = stock;
-        this.descripcion = descripcion;
-        this.imagen = imagen;
-        this.estado = estado;
-    }
 
     public int getIdArticulo() {
         return idArticulo;
@@ -39,12 +28,12 @@ public class Articulo {
         this.idArticulo = idArticulo;
     }
 
-    public int getCategoriaId() {
-        return categoriaId;
+    public int getCategoria_id() {
+        return categoria_Id;
     }
 
-    public void setCategoriaId(int categoriaId) {
-        this.categoriaId = categoriaId;
+    public void setCategoria_id(int categoria_Id) {
+        this.categoria_Id = categoria_Id;
     }
 
     public String getCodigo() {
@@ -79,11 +68,11 @@ public class Articulo {
         this.stock = stock;
     }
 
-    public String getDescripcion() {
+    public String getDesscriocion() {
         return descripcion;
     }
 
-    public void setDescripcion(String descripcion) {
+    public void setDesscriocion(String descripcion) {
         this.descripcion = descripcion;
     }
 
@@ -105,8 +94,22 @@ public class Articulo {
 
     public Articulo() {
     }
-   
 
-   
+    public Articulo(int idArticulo, int categoria_id, String codigo, String nombre, double precio_venta, int stock, String desscriocion, String imagen, boolean estado) {
+        this.idArticulo = idArticulo;
+        this.categoria_Id = categoria_id;
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.precio_venta = precio_venta;
+        this.stock = stock;
+        this.descripcion = desscriocion;
+        this.imagen = imagen;
+        this.estado = estado;
+    }
+
+    @Override
+    public String toString() {
+        return "Articulo{" + "idArticulo=" + idArticulo + ", categoria_id=" + categoria_Id + ", codigo=" + codigo + ", nombre=" + nombre + ", precio_venta=" + precio_venta + ", stock=" + stock + ", desscriocion=" + descripcion+ ", imagen=" + imagen + ", estado=" + estado + '}';
+    }
     
 }
