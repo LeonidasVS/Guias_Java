@@ -1,3 +1,5 @@
+package datosDAO;
+
 import java.util.List;
 import database.Conexion;
 import datos.interfaces.CrudPaginadoInterface;
