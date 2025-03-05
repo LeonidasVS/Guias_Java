@@ -10,7 +10,7 @@ import javax.swing.JDesktopPane;
 
 /**
  *
- * @author everc
+ * @author Envy
  */
 public class FrmPrincipal extends javax.swing.JFrame {
 

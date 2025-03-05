@@ -6,7 +6,7 @@ package entidades;
 
 /**
  *
- * @author everc
+ * @author Envy
  */
 public class Categoria {
     private int id;

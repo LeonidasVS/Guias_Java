@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  *
- * @author everc
+ * @author Envy
  */
 public interface CRUDGeneralInterface <T> {
     public  List<T> getAll(String list);

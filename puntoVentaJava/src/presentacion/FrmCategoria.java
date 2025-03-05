@@ -11,7 +11,7 @@ import javax.swing.table.TableRowSorter;
 import negocio.CategoriaControl;
 /**
  *
- * @author everc
+ * @author Envy
  */
 public class FrmCategoria extends javax.swing.JInternalFrame {
 

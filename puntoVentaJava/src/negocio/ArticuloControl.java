@@ -19,7 +19,7 @@ public class ArticuloControl {
 
     public ArticuloControl() {
         this.DATOS = new ArticuloDAO();
-        this.obj = new Articulo();
+        this.obj=new Articulo();
     }
 
     public DefaultTableModel listar(String texto,
@@ -33,7 +33,7 @@ public class ArticuloControl {
         this.tModel = new DefaultTableModel(null, titulos);
 
         String estado;
-        String[] registro = new String[4];
+        String[] registro = new String[9];
         this.registrosMostrados = 0;
         for (Articulo item : lista) {
             if (item.isEstado()) {
@@ -43,15 +43,14 @@ public class ArticuloControl {
             }
 
             registro[0] = Integer.toString(item.getIdArticulo());
-            registro[1] = Integer.toString(item.getCategoria_id());
+            registro[1] = Integer.toString(item.getCategoria_Id());
             registro[2] = item.getCodigo();
             registro[3] = item.getNombre();
             registro[4] = Double.toString(item.getPrecio_venta());
             registro[5] = Integer.toString(item.getStock());
-            registro[6] = item.getDesscriocion();
+            registro[6] = item.getDescripcion();
             registro[7] = item.getImagen();
             registro[8] = Boolean.toString(item.isEstado());
-
             this.registrosMostrados = this.registrosMostrados + 1;
             this.tModel.addRow(registro);
         }
@@ -69,11 +68,11 @@ public class ArticuloControl {
             return "Registro ya existe";
         } else {
             obj.setNombre(nombre);
-            obj.setCategoria_id(categoria_id);
+            obj.setCategoria_Id(categoria_id);
             obj.setCodigo(codigo);
             obj.setNombre(nombre);
             obj.setPrecio_venta(precio);
-            obj.setDesscriocion(descripcion);
+            obj.setDescripcion(descripcion);
             obj.setImagen(imagen);
             if (DATOS.insert(obj)) {
                 return "OK";
@@ -83,7 +82,7 @@ public class ArticuloControl {
         }
     }
 
-        public String actualizar(
+     public String actualizar(
             int articulo_id,
             int categoria_id,
             String codigo,
@@ -98,11 +97,11 @@ public class ArticuloControl {
 
             obj.setIdArticulo(articulo_id);
             obj.setNombre(nombre);
-            obj.setCategoria_id(categoria_id);
+            obj.setCategoria_Id(categoria_id);
             obj.setCodigo(codigo);
             obj.setNombre(nombre);
             obj.setPrecio_venta(precio);
-            obj.setDesscriocion(descripcion);
+            obj.setDescripcion(descripcion);
             obj.setImagen(imagen);
 
             // Primero verificamos si el nombre ya existe en la base de datos
@@ -119,7 +118,6 @@ public class ArticuloControl {
             return "Error en la actualización";
         }
     }
-
     public String desactivar(int id) {
         if (DATOS.offVaraible(id)) {
             return "OK";

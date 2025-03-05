@@ -11,7 +11,7 @@ import javax.swing.table.TableRowSorter;
 import negocio.ArticuloControl;
 /**
  *
- * @author envy
+ * @author Envy
  */
 public class FrmArticulo extends javax.swing.JInternalFrame {
 

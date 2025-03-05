@@ -21,7 +21,7 @@ public class ArticuloDAO implements CrudPaginadoInterface<Articulo> {
         conectar = Conexion.getInstance();
     }
 
-    @Override
+   @Override
     public List<Articulo> getAll(String list, int totalPorPagina, int numPagina) {
         List<Articulo> registros = new ArrayList();
         try {
@@ -92,12 +92,12 @@ public class ArticuloDAO implements CrudPaginadoInterface<Articulo> {
                 + "estado) "
                 + "VALUES"
                 + "(?,?,?,?,?,?,?,1)");
-            ps.setInt(1, object.getCategoria_id());
+            ps.setInt(1, object.getCategoria_Id());
             ps.setString(2, object.getCodigo());
             ps.setString(3, object.getNombre());
             ps.setDouble(4, object.getPrecio_venta());
             ps.setInt(5, object.getStock());
-            ps.setString(6, object.getDesscriocion());
+            ps.setString(6, object.getDescripcion());
              ps.setString(7, object.getImagen());
             if(ps.executeUpdate() > 0){
                 resp = true;
@@ -123,15 +123,15 @@ public class ArticuloDAO implements CrudPaginadoInterface<Articulo> {
                 + "nombre=?"
                 + "precio_venta=?"
                 + "stock=?"
-                + "desscripocion=?"
+                + "descripcion=?"
                 + "imagen=?"
                 + "where idArticulo= ?");
-             ps.setInt(1, object.getCategoria_id());
+             ps.setInt(1, object.getCategoria_Id());
             ps.setString(2, object.getCodigo());
             ps.setString(3, object.getNombre());
             ps.setDouble(4, object.getPrecio_venta());
             ps.setInt(5, object.getStock());
-            ps.setString(6, object.getDesscriocion());
+            ps.setString(6, object.getDescripcion());
              ps.setString(7, object.getImagen());
              ps.setInt(8, object.getIdArticulo());
             if(ps.executeUpdate() > 0){
