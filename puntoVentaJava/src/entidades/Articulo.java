@@ -12,6 +12,7 @@ package entidades;
 public class Articulo {
     private int idArticulo;
     private int categoria_Id;
+    private String categoriaNombre;
     private String codigo;
     private String nombre;
     private double precio_venta;
@@ -20,12 +21,13 @@ public class Articulo {
     private String  imagen; 
     private boolean estado;
 
-    public Articulo() {
+     public Articulo() {
     }
-
-    public Articulo(int idArticulo, int categoria_Id, String codigo, String nombre, double precio_venta, int stock, String descripcion, String imagen, boolean estado) {
+    
+    public Articulo(int idArticulo, int categoria_Id, String categoriaNombre, String codigo, String nombre, double precio_venta, int stock, String descripcion, String imagen, boolean estado) {
         this.idArticulo = idArticulo;
         this.categoria_Id = categoria_Id;
+        this.categoriaNombre = categoriaNombre;
         this.codigo = codigo;
         this.nombre = nombre;
         this.precio_venta = precio_venta;
@@ -35,6 +37,13 @@ public class Articulo {
         this.estado = estado;
     }
 
+      public String getCategoriaNombre() {
+        return categoriaNombre;
+    }
+
+    public void setCategoriaNombre(String categoriaNombre) {
+        this.categoriaNombre = categoriaNombre;
+    }
     
     public int getIdArticulo() {
         return idArticulo;
@@ -110,7 +119,8 @@ public class Articulo {
 
     @Override
     public String toString() {
-        return "Articulo{" + "idArticulo=" + idArticulo + ", categoria_Id=" + categoria_Id + ", codigo=" + codigo + ", nombre=" + nombre + ", precio_venta=" + precio_venta + ", stock=" + stock + ", descripcion=" + descripcion + ", imagen=" + imagen + ", estado=" + estado + '}';
+        return "Articulo{" + "idArticulo=" + idArticulo + ", categoria_Id=" + categoria_Id + ", categoriaNombre=" + categoriaNombre + ", codigo=" + codigo + ", nombre=" + nombre + ", precio_venta=" + precio_venta + ", stock=" + stock + ", descripcion=" + descripcion + ", imagen=" + imagen + ", estado=" + estado + '}';
     }
-       
+    
+    
 }
